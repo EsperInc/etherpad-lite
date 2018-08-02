@@ -48,7 +48,7 @@
   "dbType" : "mysql",
   "dbSettings" : {
                   "user"    : "root",
-                  "host"    : "localhost",
+                  "host"    : "mysql.esper.com",
                   "password": "nmahu3kj35hsalfoa",
                   "database": "etherpad_lite",
                   "charset" : "utf8mb4"
