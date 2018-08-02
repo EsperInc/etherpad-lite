@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "ep_disable_lists",
+      "client_hooks": {
+        "documentReady": "ep_disable_lists/static/js/disable_lists:disableLists"
+      }
+    }
+  ]
+}
