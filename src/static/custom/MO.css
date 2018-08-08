@@ -1,0 +1,32 @@
+.list-number1 li:before {
+  content: "("counter(first, decimal)") ";
+  counter-increment: first;
+}
+.list-number2 li:before {
+  content: "("counter(second, upper-alpha)") ";
+  counter-increment: second;
+}
+.list-number3 li:before {
+  content: counter(third, decimal)". " ;
+  counter-increment: third;
+}
+.list-number4 li:before {
+  content: counter(fourth, upper-alpha)". ";
+  counter-increment: fourth;
+}
+.list-number5 li:before {
+  content: "("counter(fifth, upper-roman)") ";
+  counter-increment: fifth;
+}
+.list-number6 li:before {
+  content: "("counter(sixth, lower-alpha)") ";
+  counter-increment: sixth;
+}
+.list-number7 li:before {
+  content: counter(seventh, upper-roman)". ";
+  counter-increment: seventh;
+}
+.list-number8 li:before {
+  content: counter(eighth, lower-alpha)". ";
+  counter-increment: eighth;
+}
