@@ -1,0 +1,24 @@
+.list-number1 li:before {
+  content: "Section "counter(first, decimal)". ";
+  counter-increment: first;
+}
+.list-number2 li:before {
+  content: "("counter(second, decimal)") ";
+  counter-increment: second;
+}
+.list-number3 li:before {
+  content: "("counter(third, lower-alpha)") " ;
+  counter-increment: third;
+}
+.list-number4 li:before {
+  content: counter(fourth, decimal)". ";
+  counter-increment: fourth;
+}
+.list-number5 li:before {
+  content: counter(fifth, lower-alpha)". ";
+  counter-increment: fifth;
+}
+.list-number6 li:before {
+  content: "("counter(sixth, lower-roman)") ";
+  counter-increment: sixth;
+}

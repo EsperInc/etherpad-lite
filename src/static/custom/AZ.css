@@ -1,0 +1,21 @@
+ .list-number1 li:before {
+  content: counter(first, upper-alpha)". ";
+  counter-increment: first;
+}
+.list-number2 li:before {
+  content: counter(second, decimal)". ";
+  counter-increment: second;
+}
+.list-number3 li:before {
+  content: counter(third, lower-alpha)". " ;
+  counter-increment: third;
+}
+.list-number4 li:before {
+  content: counter(fourth, lower-roman)". ";
+  counter-increment: fourth;
+}
+.list-number5 li:before {
+  content: "("counter(fifth, decimal)") ";
+  counter-increment: fifth;
+}
+ 
