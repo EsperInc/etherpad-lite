@@ -15,7 +15,7 @@
   "favicon": "favicon.ico",
 
   //IP and port which etherpad should bind at
-  "ip": "0.0.0.0",
+  "ip": "172.31.3.69",
   "port" : 9001,
 
   // Option to hide/show the settings.json in admin page, default option is set to true
@@ -154,7 +154,7 @@
   "requireAuthorization" : false,
 
   /*when you use NginX or another proxy/ load-balancer set this to true*/
-  "trustProxy" : false,
+  "trustProxy" : true,
 
   /* Privacy: disable IP logging */
   "disableIPlogging" : false,
@@ -246,13 +246,14 @@
         { "type": "console"
         //, "category": "access"// only logs pad access
         }
-    /*
+    
       , { "type": "file"
-      , "filename": "your-log-file-here.log"
-      , "maxLogSize": 1024
-      , "backups": 3 // how many log files there're gonna be at max
+        , "filename": "/root/.esper/log/etherpad.log"
+        , "maxLogSize": 1024000
+        , "level": "warn"
+        , "backups": 3 // how many log files there're gonna be at max
       //, "category": "test" // only log a specific category
-        }*/
+        }
     /*
       , { "type": "logLevelFilter"
         , "level": "warn" // filters out all log messages that have a lower level than "error"
