@@ -72,7 +72,8 @@ ol {
 }
 
 li:before {
-  list-style-position:outside;
+  list-style-position: outside;
+  /* padding-left: 1em; */
 }
 
 /* Fixes #2223 and #1836 */
@@ -82,6 +83,24 @@ li:before {
 */
 
 /* Set the indentation */
+ol.list-number1 { margin-left: 1.5em; }
+ol.list-number2 { margin-left: 3em; }
+ol.list-number3 { margin-left: 4.5em; }
+ol.list-number4 { margin-left: 6em; }
+ol.list-number5 { margin-left: 7.5em; }
+ol.list-number6 { margin-left: 9em; }
+ol.list-number7 { margin-left: 10.5em; }
+ol.list-number8 { margin-left: 12em; }
+ol.list-number9 { margin-left: 13.5em; }
+ol.list-number10 { margin-left: 15em; }
+ol.list-number11 { margin-left: 16.5em; }
+ol.list-number12 { margin-left: 18em; }
+ol.list-number13 { margin-left: 19.5em; }
+ol.list-number14 { margin-left: 21em; }
+ol.list-number15 { margin-left: 22.5em; }
+ol.list-number16 { margin-left: 24em; }
+
+/*
 ol.list-number1{ text-indent: 0px; }
 ol.list-number2{ text-indent: 10px; }
 ol.list-number3{ text-indent: 20px; }
@@ -98,6 +117,7 @@ ol.list-number13{ text-indent: 120px; }
 ol.list-number14{ text-indent: 130px; }
 ol.list-number15{ text-indent: 140px; }
 ol.list-number16{ text-indent: 150px; }
+*/
 
 /* Add styling to the first item in a list */
 
