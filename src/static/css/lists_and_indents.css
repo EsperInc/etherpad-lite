@@ -71,10 +71,15 @@ ol {
   list-style-type: decimal;
 }
 
+li:before {
+  list-style-position:outside;
+}
+
 /* Fixes #2223 and #1836 */
-ol > li {
+/*ol > li {
   display:block;
 }
+*/
 
 /* Set the indentation */
 ol.list-number1{ text-indent: 0px; }
