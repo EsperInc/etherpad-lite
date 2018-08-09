@@ -69,6 +69,7 @@ ul.list-indent14, ul.list-indent15, ul.list-indent16 { list-style-type: none; }
 
 ol {
   list-style-type: decimal;
+  list-style-position: outside;
 }
 
 li:before {
@@ -77,10 +78,9 @@ li:before {
 }
 
 /* Fixes #2223 and #1836 */
-/*ol > li {
+ol > li {
   display:block;
 }
-*/
 
 /* Set the indentation */
 ol.list-number1 { margin-left: 1.5em; }
