@@ -7,7 +7,6 @@
   store any credential settings in credentials.json
 */
 {
-  // Name your instance!
   "title": "Esper Etherpad",
 
   // favicon default name
@@ -15,13 +14,14 @@
   "favicon": "favicon.ico",
 
   //IP and port which etherpad should bind at
-  "ip": "172.31.3.69",
   "port" : 9001,
 
   // Option to hide/show the settings.json in admin page, default option is set to true
   "showSettingsInAdminPage" : true,
 
   /*
+  // SSL configuration is handled by nginx in /etc/nginx/sites-available/default, don't use this.
+  //
   // Node native SSL support
   // this is disabled by default
   //
@@ -36,8 +36,9 @@
 
   */
 
-  //The Type of the database. You can choose between dirty, postgres, sqlite and mysql
-  //You shouldn't use "dirty" for for anything else than testing or development
+  // The Type of the database. You can choose between dirty, postgres, sqlite and mysql
+  // You shouldn't use "dirty" for for anything else than testing or development
+  // credentials.json handles this.
   /*
   "dbType" : "dirty",
   //the database specific settings
@@ -45,15 +46,6 @@
                    "filename" : "var/dirty.db"
                  },
 */
-  "dbType" : "mysql",
-  "dbSettings" : {
-                  "user"    : "root",
-                  "host"    : "mysql.esper.com",
-                  "password": "2b7sTowPnzLFwCAaYoXm",
-                  "database": "etherpad_lite",
-                  "charset" : "utf8mb4"
-                },
-
   /* An Example of MySQL Configuration
      See https://github.com/ether/etherpad-lite/wiki/How-to-use-Etherpad-Lite-with-MySQL
    
@@ -118,14 +110,14 @@
   "requireSession" : false,
 
   /* Users may edit pads but not create new ones. Pad creation is only via the API. This applies both to group pads and regular pads. */
-  "editOnly" : false, // TODO: Set this to true
+  "editOnly" : true,
 
   /* Users, who have a valid session, automatically get granted access to password protected pads */
   "sessionNoPassword" : false,
 
   /* if true, all css & js will be minified before sending to the client. This will improve the loading performance massivly,
      but makes it impossible to debug the javascript/css */
-  "minify" : false,  // TODO: Set this to true.
+  "minify" : true,
 
   /* How long may clients use served javascript code (in seconds)? Without versioning this
      may cause problems during deployment. Set to 0 to disable caching */
@@ -193,18 +185,19 @@
 
   /* Users for basic authentication. is_admin = true gives access to /admin.
      If you do not uncomment this, /admin will not be available! */
-  
+  /*
+     Handled in credentials.json
   "users": {
     "admin": {
-      "password": "changeme1",
+      "password": "changeme",
       "is_admin": true
     },
     "user": {
-      "password": "changeme1",
+      "password": "changeme",
       "is_admin": false
     }
   },
-  
+  */
 
   // restrict socket.io transport methods
   "socketTransportProtocols" : ["xhr-polling", "jsonp-polling", "htmlfile"],
@@ -246,14 +239,15 @@
         { "type": "console"
         //, "category": "access"// only logs pad access
         }
-    
-      , { "type": "file"
-        , "filename": "/root/.esper/log/etherpad.log"
-        , "maxLogSize": 1024000
-        , "level": "warn"
-        , "backups": 3 // how many log files there're gonna be at max
-      //, "category": "test" // only log a specific category
-        }
+        , { "type": "logLevelFilter"
+          , "level": "warn" // filters out all log messages that have a lower level than "error"
+          , "appender":
+            { "type": "file"
+            , "filename": "/root/.esper/log/etherpad.log"
+            , "maxLogSize": 1024000
+            , "backups": 3 // how many log files there're gonna be at max
+            }
+          }
     /*
       , { "type": "logLevelFilter"
         , "level": "warn" // filters out all log messages that have a lower level than "error"
