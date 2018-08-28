@@ -1,0 +1,241 @@
+#editbar {
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #DAE1E6;
+  height: 41px !important;
+}
+
+.toolbar ul {
+  top: 0px;
+  overflow: visible;
+  box-sizing: border-box;
+  background: white;
+  padding: 0px;
+}
+
+.toolbar ul li {
+  background: white;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.toolbar ul li a {
+  background: white;
+  border-radius: 0px !important;
+  border: none;
+  padding: 12px;
+  box-sizing: border-box;
+  box-shadow: none !important;
+}
+
+.toolbar ul li.separator {
+    padding: 0;
+    visibility: visible;
+    width: 1px;
+    margin: 0px;
+    height: 39px;
+    background-color: rgba(78, 85, 92, 0.22);
+}
+
+.toolbar ul li a:hover {
+  background: #DAE1E6;
+}
+
+#editorcontainer {
+  top: 41px !important;
+} 
+
+#editorcontainer iframe {
+  padding: 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#comments {
+  height: 100%;
+}
+
+#innerdocbody {
+  color: #2B3A45;
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 18px;
+  line-height: 1.5;
+  padding-right: 120px;
+}
+
+@media (min-width: 947px) {
+  #innerdocbody.comments:not(.innerPV) {
+    margin-right: 80px !important;
+    padding-right: 120px;
+  }
+}
+
+#innerdocbody div {
+  padding: 4px;
+}
+
+#magicdomid2:first-child {
+  font-weight: bold;
+}
+
+@media (max-width: 920px) {
+  #editorcontainerbox {
+    top: 0px !important;
+  }
+}
+
+#comments .sidebar-comment {
+  background-color: #fff;
+  padding: 10px 0 0;
+  width: 250px;
+  border: 1px solid #B3BEC4 !important;
+  box-shadow: 2px 2px 3px 0 rgba(218,225,230,0.5) !important;
+  border-radius: 2px;
+}
+
+.comment-delete-container {
+  float: right;
+  margin: 0;
+  height: 15px;
+  font-size: 15px;
+  background-color: transparent !important;
+  padding: 6px 15px 4px 8px;
+  color: #7b7777;
+}
+
+.sidebar-comment>time {
+  position: absolute;
+  top: 11px;
+  font-size: 11px;
+  left: 12px;
+  color: #555;
+  font-style: italic;
+  display: block !important;
+}
+
+.comment-author-name {
+  padding-left: 12px;
+  padding-top: 12px !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: normal !important;
+  display: block !important;
+}
+
+.sidebar-comment > .comment-author-name {
+  margin-top: 36px;
+}
+
+.comment-text {
+  padding-left: 12px;
+  display: block !important;
+  font-size: 14px !important;
+  padding-bottom: 12px !important;
+  font-weight: normal !important;
+}
+
+.sidebar-comment-reply {
+  padding-left: 0px !important;
+  border-top: 1px solid #d2d2d2;
+}
+
+.sidebar-comment-reply:nth-child(even) {
+  background: transparent !important;
+}
+
+.comment-reply {
+  background-color: white;
+  margin: 0;
+  padding: 0px !important;
+  font-size: 14px;
+}
+
+.comment-reply-input-label {
+  padding-left: 12px;
+}
+
+.comment-reply-input {
+  margin-left: 12px;  
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 2px 2px 0 0;
+  border: 1px solid #DAE1E6;
+  background-color: #F5F8FA;
+}
+
+.reply-comment-suggest {
+  margin: 12px;
+  font-weight: normal;
+}
+
+.reply-comment-suggest > input {
+  width: 16px;
+  height: 16px;
+}
+
+.reply-suggestion.active {
+  padding-left: 12px;
+}
+
+.reply-comment-changeFrom-value {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.reply-comment-suggest-to {
+  width: 207px !important;
+  height: 80px !important;
+  resize: none;
+  border-radius: 2px 2px 0 0;
+  border: 1px solid #DAE1E6 !important;
+  background-color: #F5F8FA !important;
+}
+
+span.comment {
+  background: #E8ECFF !important;
+}
+
+
+/* .sidebar-comment {
+  padding: 0px !important;
+  border: 1px solid #B3BEC4 !important;
+  box-shadow: 2px 2px 3px 0 rgba(218,225,230,0.5) !important;
+  border-radius: 2px;
+}
+
+.comment-author-name {
+  padding-left: 8px;
+  padding-top: 12px !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: normal !important;
+  display: block !important;
+}
+
+.comment-text {
+  display: block !important;
+  padding-left: 8px;
+  font-size: 14px !important;
+  padding-bottom: 12px !important;
+  font-weight: normal !important;
+}
+
+.sidebar-comment-reply {
+  padding: 0px !important;
+  border-top: 1px solid #B3BEC4;
+}
+
+.comment-reply-input-label {
+  margin: 8px;
+  width: 100%;
+  box-sizing: content-box;
+  display: block;
+}
+
+input.comment-reply-input {
+  width: 100%;
+  word-break: break-word;
+} */
+
+ 
