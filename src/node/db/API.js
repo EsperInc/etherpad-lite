@@ -1287,12 +1287,12 @@ function getPadSafe(padID, shouldExist, text, callback)
     //does not exist, but should
     if(exists == false && shouldExist == true)
     {
-      callback(new customError("padID does not exist","apierror"));
+      callback(new customError("padID " + padID + " does not exist","apierror"));
     }
     //does exists, but shouldn't
     else if(exists == true && shouldExist == false)
     {
-      callback(new customError("padID does already exist","apierror"));
+      callback(new customError("padID " + padID + " already exists","apierror"));
     }
     //pad exists, let's get it
     else
