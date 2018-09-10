@@ -213,15 +213,15 @@
   /* The toolbar buttons configuration. */
   "toolbar": {
     "left": [
-      // ["bold", "italic", "underline", "strikethrough"],
-      ["orderedlist", "unorderedlist", "indent", "outdent"],
+      // ["bold", "italic", "underline", "strikethrough", "unorderedlist"],
+      ["orderedlist", "indent", "outdent"],
       ["undo", "redo"],
       ["clearauthorship"]
     ],
     "right": [
       ["timeslider", "savedrevision"], // "importexport", 
-      ["settings"], // , "embed"
-      ["showusers"]
+      ["settings"]  // , "embed"
+      // ["showusers"]
     ],
     "timeslider": [
       ["timeslider_returnToPad"] // "timeslider_export", 
