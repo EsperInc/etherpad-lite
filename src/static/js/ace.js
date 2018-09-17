@@ -281,6 +281,22 @@ plugins.ensure(function () {\n\
       (function () {return this}())[thisFunctionsName] = Ace2Editor;
 
       var outerScript = '\
+window["_fs_run_in_iframe"] = true;\n\
+window["_fs_debug"] = false;\n\
+window["_fs_host"] = "fullstory.com";\n\
+window["_fs_org"] = "C9QRB";\n\
+window["_fs_namespace"] = "FS";\n\
+(function(m,n,e,t,l,o,g,y){\n\
+    if (e in m) {if(m.console && m.console.log) { m.console.log("FullStory namespace conflict. Please set window[_fs_namespace].");} return;}\n\
+    g=m[e]=function(a,b){g.q?g.q.push([a,b]):g._api(a,b);};g.q=[];\n\
+    o=n.createElement(t);o.async=1;o.src="https://"+_fs_host+"/s/fs.js";\n\
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);\n\
+    g.identify=function(i,v){g(l,{uid:i});if(v)g(l,v)};g.setUserVars=function(v){g(l,v)};\n\
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};\n\
+    g.consent=function(a){g("consent",!arguments.length||a)};\n\
+    g.identifyAccount=function(i,v){o="account";v=v||{};v.acctId=i;g(o,v)};\n\
+    g.clearUserCookie=function(){};\n\
+})(window,document,window["_fs_namespace"],"script","user");\n\
 editorId = ' + JSON.stringify(info.id) + ';\n\
 editorInfo = parent[' + JSON.stringify(thisFunctionsName) + '].registry[editorId];\n\
 window.onload = function () {\n\
