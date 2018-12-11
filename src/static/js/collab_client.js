@@ -531,7 +531,8 @@ function getCollabClient(ace2editor, serverVars, initialUserInfo, options, _pad)
     {
       editor.setAuthorInfo(userId, {
         bgcolor: cssColor,
-        fade: 0.5
+        // fade: 0.5 // We don't want to fade because it makes it too light and causes
+        // things to look weird when etherpad creates multiple accounts for one user.
       });
     }
     else
