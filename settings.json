@@ -282,7 +282,7 @@
   "ep_page_view_default" : false,
 
   "ep_themes_ext": {
-    "default": ["../custom/MO.css"],
+    "default": ["../custom/KY.css"],
     "AZ": ["../custom/AZ.css"],
     "KY": ["../custom/KY.css"],
     "MO": ["../custom/MO.css"],
