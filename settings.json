@@ -60,7 +60,7 @@
   */
 
   //the default text of a pad
-  "defaultPadText" : "This text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!",
+  "defaultPadText" : "",
 
   /* Default Pad behavior, users can override by changing */
   "padOptions": {
@@ -121,7 +121,7 @@
 
   /* How long may clients use served javascript code (in seconds)? Without versioning this
      may cause problems during deployment. Set to 0 to disable caching */
-  "maxAge" : 0, // 21600, // 60 * 60 * 6 = 6 hours
+  "maxAge" : 43200, // 60 * 60 * 12 = 12 hours
 
   /* This is the absolute path to the Abiword executable. Setting it to null, disables abiword.
      Abiword is needed to advanced import/export features of pads*/
