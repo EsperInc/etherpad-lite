@@ -2,23 +2,23 @@
    "ip": "0.0.0.0",
    "dbType": "mysql",
    "dbSettings": {
-     "user": "",
-     "host": "",
-     "password": "",
+     "user": "ETHERPAD_DB_USER",
+     "host": "ETHERPAD_DB_HOST",
+     "password": "ETHERPAD_DB_PASSWORD",
      "database": "etherpad_lite",
      "charset": "utf8mb4"
    },
    "users": {
      "admin": {
-       "password": "",
+       "password": "ETHERPAD_PASSWORD",
        "is_admin": true
      },
      "user": {
-       "password": "",
+       "password": "ETHERPAD_PASSWORD",
        "is_admin": false
      }
    },
-   "port":,
+   "port":ETHERPAD_PORT,
 
    "title":"Esper Etherpad",
    "favicon":"favicon.ico",
