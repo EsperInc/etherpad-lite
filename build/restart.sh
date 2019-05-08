@@ -7,4 +7,4 @@ BIN_DIR="$(dirname "${BASH_SOURCE[0]}")"/../bin
 # The problem is that the first dirname would give "." and dirname of that is still ".".
 # BIN_DIR="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)"/bin
 
-$BIN_DIR/screenRun.sh
+$BIN_DIR/runForever.sh
