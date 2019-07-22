@@ -264,11 +264,11 @@ exports.getText = function(padID, rev, callback)
       {
         if(ERR(err, callback)) return;
         
-        // var data = {text: atext.text};
-        // callback(null, data);
+        var data = {text: atext.text};
+        callback(null, data);
         
-        var padText = exportTxt.getTXTFromAtext(pad, atext);
-        callback(null, {"text": padText});
+        // var padText = exportTxt.getTXTFromAtext(pad, atext);
+        // callback(null, {"text": padText});
       })
     }
     //the client wants the latest text, lets return it to him
