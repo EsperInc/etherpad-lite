@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+
+  db:
+    image: mysql:5.6
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'etherpad_lite'
+      MYSQL_ROOT_PASSWORD: 'db_password'
+      MYSQL_ROOT_HOST: '%'
+    expose:
+      - '3306'
+    networks:
+      - internal
+    volumes:
+      - db:/var/lib/mysql
+
+  etherpad:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "9001:9001"
+    environment:
+      - ETHERPAD_DB_USER=root
+      - ETHERPAD_DB_HOST=thedb
+      - ETHERPAD_DB_PASSWORD=db_password
+      - ETHERPAD_PASSWORD=abcdefxyz
+      - ETHERPAD_PORT=9001
+      - ETHERPAD_API_KEY=909479d5acffe10be1e338a6352a21259089adf49397e3f2f5adce33f63f32b4
+    networks:
+      - internal
+    links:
+      - "db:thedb"
+
+networks:
+  internal:
+    external: false
+
+volumes:
+  db:

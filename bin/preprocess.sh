@@ -11,4 +11,5 @@ m4 \
 
 echo "${ETHERPAD_API_KEY}" > APIKEY.txt
 
+bin/wait-for-it.sh "${ETHERPAD_DB_HOST}:3306"
 exec "$@"
