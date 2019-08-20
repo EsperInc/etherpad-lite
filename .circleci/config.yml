@@ -1,0 +1,29 @@
+tags-only: &tags-only
+  filters:
+    branches:
+      ignore: /.*/
+    tags:
+      only: /.*/
+
+always: &always
+  filters:
+    branches:
+      only: /.*/
+    tags:
+      only: /.*/
+
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@6.0.0
+workflows:
+  default: # "default" is not a special name
+    jobs:
+      - aws-ecr/build-and-push-image:
+          <<: *tags-only
+          context: esper-ecr
+          requires:
+          region: AWS_REGION
+          repo: "etherpad"
+          tag: "${CIRCLE_TAG}"
+
+jobs:
