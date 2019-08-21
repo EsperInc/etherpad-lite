@@ -1,4 +1,4 @@
-FROM node:12.8.1
+FROM node:10
 
 # Set the following to production to avoid installing devDeps
 # this can be done with build args (and is mandatory to build ARM version)
