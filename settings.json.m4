@@ -19,6 +19,7 @@
      }
    },
    "port":ETHERPAD_PORT,
+   "loglevel":"ETHERPAD_LOG_LEVEL",
 
    "title":"Esper Etherpad",
    "favicon":"favicon.ico",
@@ -121,7 +122,6 @@
          ]
       ]
    },
-   "loglevel":"INFO",
    "logconfig":{
       "appenders":[
          {
