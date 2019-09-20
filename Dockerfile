@@ -20,5 +20,7 @@ RUN npm install \
   ep_spellcheck@0.0.3 \
   ep_themes_ext@0.0.4
 
+RUN npm install plugins_available/ep_healthcheck
+
 ENTRYPOINT ["bin/preprocess.sh"]
 CMD ["node", "node_modules/ep_etherpad-lite/node/server.js"]
