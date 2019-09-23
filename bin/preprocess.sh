@@ -9,6 +9,7 @@ m4 \
   "-DETHERPAD_PORT=${ETHERPAD_PORT}" \
   "-DETHERPAD_DB_NAME=${ETHERPAD_DB_NAME:-etherpad_lite}" \
   "-DETHERPAD_LOG_LEVEL=${ETHERPAD_LOG_LEVEL:-WARN}" \
+  "-DKAFKA_BOOTSTRAP_HOSTS=${KAFKA_BOOTSTRAP_HOSTS}" \
   settings.json.m4 > settings.json
 
 echo "${ETHERPAD_API_KEY}" > APIKEY.txt

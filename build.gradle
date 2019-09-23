@@ -13,6 +13,9 @@ task dockerrun(type:Exec) {
                 -e ETHERPAD_DB_PASSWORD="" -e ETHERPAD_PASSWORD=booyah \
                 -e ETHERPAD_PORT=9001 -e ETHERPAD_API_KEY=2a3205eb87d5646ea8feb20fe1a8958bff9e9a94976e9515 \
                 -e ETHERPAD_DB_NAME=etherpad_lite_db \
+                -e ETHERPAD_LOG_LEVEL=info \
+                -e KAFKA_BOOTSTRAP_HOSTS=host.docker.internal:9092 \
+                -e DEBUG="kafka-node:*" \
                 etherpad'
 }
 

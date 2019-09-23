@@ -147,5 +147,10 @@
       "MO":[
          "../custom/MO.css"
       ]
+   },
+   "ep_kafka_chat":{
+        "enabled":true,
+        "topic":"proposal.userComment",
+        "kafka_bootstrap_hosts":"KAFKA_BOOTSTRAP_HOSTS"
    }
 }
