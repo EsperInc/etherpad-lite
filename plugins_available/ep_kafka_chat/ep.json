@@ -1,0 +1,11 @@
+{
+  "parts": [
+    {
+      "name": "kafka-chat",
+      "hooks": {
+        "expressCreateServer": "ep_kafka_chat/kafka-chat:expressCreateServer",
+        "dbSet": "ep_kafka_chat/kafka-chat:dbSet"
+      }
+    }
+  ]
+}

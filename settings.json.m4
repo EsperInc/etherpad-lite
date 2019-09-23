@@ -5,7 +5,7 @@
      "user": "ETHERPAD_DB_USER",
      "host": "ETHERPAD_DB_HOST",
      "password": "ETHERPAD_DB_PASSWORD",
-     "database": "etherpad_lite",
+     "database": "ETHERPAD_DB_NAME",
      "charset": "utf8mb4"
    },
    "users": {
@@ -147,5 +147,10 @@
       "MO":[
          "../custom/MO.css"
       ]
+   },
+   "ep_kafka_chat":{
+        "enabled":true,
+        "topic":"proposal.userComment",
+        "kafka_bootstrap_hosts":"KAFKA_BOOTSTRAP_HOSTS"
    }
 }

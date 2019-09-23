@@ -22,6 +22,8 @@
 var ueberDB = require("ueberdb2");
 var settings = require("../utils/Settings");
 var log4js = require('log4js');
+var hooks = require('ep_etherpad-lite/static/js/pluginfw/hooks');
+
 
 //set database settings
 var db = new ueberDB.database(settings.dbType, settings.dbSettings, null, log4js.getLogger("ueberDB"));
@@ -50,7 +52,25 @@ exports.init = function(callback)
     //everything ok
     else
     {
-      exports.db = db;  
+
+      exports.db = db;
+
+      // special esper injection here, so we can spot when comments and chats are being made.
+      // we intercept db writes
+      let originalSetMethod = db.set;
+      db.set = function(key, value, err, data) {
+        // intercept the data callback
+        var dataCallback = arguments[3];
+        arguments[3] = new function(anything) {
+          if (dataCallback != null) {
+            dataCallback.call(anything);
+          }
+          // after the data callback then we call the hook
+          hooks.callAll("dbSet", {'key':key, 'value':value});
+        };
+        return originalSetMethod.apply(this, arguments);
+      };
+
       callback(null);
     }
   });
