@@ -60,10 +60,10 @@ function init() {
     var url = loc.protocol + "//" + loc.hostname + ":" + port + "/";
     //find out in which subfolder we are
     var resource = exports.baseURL.substring(1) + 'socket.io';
-    
+
     //build up the socket io connection
     socket = io.connect(url, {path: exports.baseURL + 'socket.io', resource: resource});
-    
+
     //send the ready message once we're connected
     socket.on('connect', function()
     {
@@ -126,13 +126,13 @@ function sendSocketMsg(type, data)
 }
 
 var fireWhenAllScriptsAreLoaded = [];
-  
+
 var changesetLoader;
 function handleClientVars(message)
 {
   //save the client Vars
   clientVars = message.data;
-  
+
   //load all script that doesn't work without the clientVars
   BroadcastSlider = require('./broadcast_slider').loadBroadcastSliderJS(fireWhenAllScriptsAreLoaded);
   require('./broadcast_revisions').loadBroadcastRevisionsJS();
@@ -166,25 +166,27 @@ function handleClientVars(message)
   // font family change
   $("#viewfontmenu").change(function(){
     var font = $("#viewfontmenu").val();
-    if(font === "monospace") setFont("Courier new");
-    if(font === "opendyslexic") setFont("OpenDyslexic");
-    if(font === "comicsans") setFont("Comic Sans MS");
-    if(font === "georgia") setFont("Georgia");
-    if(font === "impact") setFont("Impact");
-    if(font === "lucida") setFont("Lucida");
-    if(font === "lucidasans") setFont("Lucida Sans Unicode");
-    if(font === "palatino") setFont("Palatino Linotype");
-    if(font === "tahoma") setFont("Tahoma");
-    if(font === "timesnewroman") setFont("Times New Roman");
-    if(font === "trebuchet") setFont("Trebuchet MS");
-    if(font === "verdana") setFont("Verdana");
-    if(font === "symbol") setFont("Symbol");
-    if(font === "webdings") setFont("Webdings");
-    if(font === "wingdings") setFont("Wingdings");
-    if(font === "sansserif") setFont("MS Sans Serif");
-    if(font === "serif") setFont("MS Serif");
+    switch (font) {
+      case "monospace": setFont("Courier new");break;
+      case "opendyslexic": setFont("OpenDyslexic");break;
+      case "comicsans": setFont("Comic Sans MS");break;
+      case "georgia": setFont("Georgia");break;
+      case "impact": setFont("Impact");break;
+      case "lucida": setFont("Lucida");break;
+      case "lucidasans": setFont("Lucida Sans Unicode");break;
+      case "palatino": setFont("Palatino Linotype");break;
+      case "tahoma": setFont("Tahoma");break;
+      case "timesnewroman": setFont("Times New Roman");break;
+      case "trebuchet": setFont("Trebuchet MS");break;
+      case "verdana": setFont("Verdana");break;
+      case "symbol": setFont("Symbol");break;
+      case "webdings": setFont("Webdings");break;
+      case "wingdings": setFont("Wingdings");break;
+      case "sansserif": setFont("MS Sans Serif");break;
+      case "serif": setFont("MS Serif");break;
+      default: setFont("");break;
+    }
   });
-
 }
 
 function setFont(font){
