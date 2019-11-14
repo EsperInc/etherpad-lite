@@ -1,5 +1,5 @@
 {
-   "skinName": "no-skin",
+   "skinName": "esper-default",
    "ip": "0.0.0.0",
    "dbType": "mysql",
    "dbSettings": {
@@ -138,16 +138,16 @@
    "ep_page_view_default":false,
    "ep_themes_ext":{
       "default":[
-         "../custom/KY.css"
+         "../skins/esper-default/KY.css"
       ],
       "AZ":[
-         "../custom/AZ.css"
+         "../skins/esper-default/AZ.css"
       ],
       "KY":[
-         "../custom/KY.css"
+         "../skins/esper-default/KY.css"
       ],
       "MO":[
-         "../custom/MO.css"
+         "../skins/esper-default/MO.css"
       ]
    }
 }
