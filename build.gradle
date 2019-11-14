@@ -1,0 +1,19 @@
+
+task dockerbuild(type:Exec) {
+    commandLine 'docker', 'build', '.', '-t', 'etherpad'
+}
+
+// run etherpad on a local machine on port 9001
+// assumes mysql running on the host
+task dockerrun(type:Exec) {
+
+    commandLine 'sh', '-c',
+            'docker run -p 9001:9001 \
+                -e ETHERPAD_DB_USER=root -e ETHERPAD_DB_HOST=host.docker.internal \
+                -e ETHERPAD_DB_PASSWORD="" -e ETHERPAD_PASSWORD=booyah \
+                -e ETHERPAD_PORT=9001 -e ETHERPAD_API_KEY=2a3205eb87d5646ea8feb20fe1a8958bff9e9a94976e9515226427777efaf69f \
+                -e ETHERPAD_DB_NAME=etherpad_lite_db \
+                etherpad'
+}
+
+
