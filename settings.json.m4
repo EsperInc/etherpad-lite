@@ -5,7 +5,7 @@
      "user": "ETHERPAD_DB_USER",
      "host": "ETHERPAD_DB_HOST",
      "password": "ETHERPAD_DB_PASSWORD",
-     "database": "etherpad_lite",
+     "database": "ETHERPAD_DB_NAME",
      "charset": "utf8mb4"
    },
    "users": {
