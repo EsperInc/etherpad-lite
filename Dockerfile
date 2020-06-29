@@ -2,8 +2,13 @@ FROM node:12.8.1
 
 ENV NODE_ENV=production
 
-RUN useradd -ms /bin/bash etherpad
-RUN mkdir /opt/etherpad-lite && \
+# Well-known gid for use in k8s securityContext
+# https://github.com/aws/amazon-eks-pod-identity-webhook/issues/8
+# https://github.com/kubernetes-sigs/external-dns/pull/1185
+# ... but NOT gid=1000: https://github.com/nodejs/docker-node/issues/289
+RUN groupadd --gid 1001 etherpad && \
+    useradd --uid 1001 --gid etherpad -ms /bin/bash etherpad && \
+    mkdir /opt/etherpad-lite && \
     chown etherpad:etherpad -R /opt/etherpad-lite
 
 WORKDIR /opt/etherpad-lite
