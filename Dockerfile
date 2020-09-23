@@ -8,8 +8,8 @@ ENV NODE_ENV=production
 # ... but NOT gid=1000: https://github.com/nodejs/docker-node/issues/289
 RUN groupadd --gid 1001 etherpad && \
     useradd --uid 1001 --gid etherpad -ms /bin/bash etherpad && \
-    mkdir /opt/etherpad-lite && \
-    chown etherpad:etherpad -R /opt/etherpad-lite
+    mkdir -p /opt/etherpad-lite /root/.esper && \
+    chown etherpad:etherpad -R /opt/etherpad-lite /root/.esper
 
 WORKDIR /opt/etherpad-lite
 COPY --chown=etherpad:etherpad . .
