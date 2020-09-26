@@ -214,7 +214,7 @@
   "toolbar": {
     "left": [
       // ["bold", "italic", "underline", "strikethrough", "unorderedlist"],
-      ["orderedlist", "indent", "outdent"],
+      // ["orderedlist", "indent", "outdent"],
       ["undo", "redo"],
       ["clearauthorship"]
     ],
