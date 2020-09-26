@@ -74,7 +74,7 @@ function randomString()
 var getParameters = [
   { name: "noColors",         checkVal: "true",  callback: function(val) { settings.noColors = true; $('#clearAuthorship').hide(); } },
   { name: "showControls",     checkVal: "false", callback: function(val) { $('#editbar').addClass('hideControlsEditbar'); $('#editorcontainer').addClass('hideControlsEditor'); } },
-  { name: "showChat",         checkVal: "false", callback: function(val) { $('#chaticon').hide(); } },
+  { name: "showChat",         checkVal: "true", callback: function(val) { $('#chaticon').show(); } },
   { name: "showLineNumbers",  checkVal: "false", callback: function(val) { settings.LineNumbersDisabled = true; } },
   { name: "useMonospaceFont", checkVal: "true",  callback: function(val) { settings.useMonospaceFontGlobal = true; } },
   // If the username is set as a parameter we should set a global value that we can call once we have initiated the pad.
@@ -314,7 +314,7 @@ function handshake()
       // If the Monospacefont value is set to true then change it to monospace.
       if (settings.useMonospaceFontGlobal == true)
       {
-        pad.changeViewOption('useMonospaceFont', true);
+        pad.changeViewOption('padFontFamily', 'monospace');
       }
       // if the globalUserName value is set we need to tell the server and the client about the new authorname
       if (settings.globalUserName !== false)
@@ -475,7 +475,7 @@ var pad = {
   },
   _afterHandshake: function()
   {
-    pad.clientTimeOffset = new Date().getTime() - clientVars.serverTimestamp;
+    pad.clientTimeOffset = Date.now() - clientVars.serverTimestamp;
     //initialize the chat
     chat.init(this);
     getParams();
@@ -560,19 +560,7 @@ var pad = {
       if(padcookie.getPref("rtlIsTrue") == true){
         pad.changeViewOption('rtlIsTrue', true);
       }
-
-
-      var fonts = ['useMonospaceFont', 'useMontserratFont', 'useOpenDyslexicFont', 'useComicSansFont', 'useCourierNewFont',
-        'useGeorgiaFont', 'useImpactFont', 'useLucidaFont', 'useLucidaSansFont', 'usePalatinoFont', 'useRobotoMonoFont',
-        'useTahomaFont', 'useTimesNewRomanFont', 'useTrebuchetFont', 'useVerdanaFont', 'useSymbolFont', 'useWebdingsFont',
-        'useWingDingsFont', 'useSansSerifFont', 'useSerifFont'];
-
-
-      $.each(fonts, function(i, font){
-        if(padcookie.getPref(font) == true){
-          pad.changeViewOption(font, true);
-        }
-      })
+      pad.changeViewOption('padFontFamily', padcookie.getPref("padFontFamily"));
 
       hooks.aCallAll("postAceInit", {ace: padeditor.ace, pad: pad});
     }

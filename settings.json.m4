@@ -1,4 +1,5 @@
 {
+   "skinName": "no-skin",
    "ip": "0.0.0.0",
    "dbType": "mysql",
    "dbSettings": {
@@ -122,6 +123,7 @@
          ]
       ]
    },
+   "exposeVersion": false,
    "logconfig":{
       "appenders":[
          {
